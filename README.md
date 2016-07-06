@@ -1,5 +1,7 @@
 # Env
 
+[![GoDoc](https://godoc.org/github.com/jelmersnoeck/env?status.svg)](https://godoc.org/github.com/jelmersnoeck/env)
+
 Env allows you to get environment variables and fallback to defaults if the
 environment variable is not set or not valid.
 
