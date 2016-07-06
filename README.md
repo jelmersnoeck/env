@@ -7,6 +7,10 @@ Env makes it easy to get your environment variables in the correct typed format.
 It also introduces a fallback system in case the environmen variable is not set
 or is not valid for the requested type.
 
+## Supported methods
+
+Have a look at the available methods in the [documentation](https://godoc.org/github.com/jelmersnoeck/env).
+
 ## Notifiers
 
 Notifiers can be used to take action when something goes wrong. This could be
@@ -18,10 +22,6 @@ There are several implementations of notifiers, the most basic one being the
 
 Another implementation is the `panicNotifier`, which will panic when
 notifications happen, terminating the application.
-
-## Supported methods
-
-Have a look at the available methods in the [documentation](https://godoc.org/github.com/jelmersnoeck/env)
 
 ## Usage
 
