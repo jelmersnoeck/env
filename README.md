@@ -25,10 +25,41 @@ Have a look at the available methods in the [documentation](https://godoc.org/gi
 
 ## Usage
 
+### Defaults
+
 ```go
+import (
+    "github.com/jelmersnoeck/env"
+)
+
 func main() {
     os.Setenv("MY_ENV", "5s") // do this on launching your application
 
     time.Sleep(env.Duration("MY_ENV", time.Second)) // this will sleep for 5 seconds
+    time.Sleep(env.Duration("MY_OTHER_ENV", time.Second)) // this will sleep for a second
+
+    os.Setenv("WRONG_ENV", "hello")
+    time.Sleep(env.Duration("WRONG_ENV", time.Minute)) // this will sleep for a minute
+}
+```
+
+### Panic notifier
+
+```go
+import (
+    "github.com/jelmersnoeck/env"
+    "github.com/jelmersnoeck/env/notifier/panic"
+)
+
+func main() {
+    env.UseNotifier(panic.NewNotifier())
+
+    os.Setenv("MY_ENV", "5s") // do this on launching your application
+
+    time.Sleep(env.Duration("MY_ENV", time.Second)) // this will sleep for 5 seconds
+    time.Sleep(env.Duration("MY_OTHER_ENV", time.Second)) // this will panic because the env is not set
+
+    os.Setenv("WRONG_ENV", "hello")
+    time.Sleep(env.Duration("WRONG_ENV", time.Minute)) // this will panic because the env is not a duration
 }
 ```
