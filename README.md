@@ -28,3 +28,13 @@ notifications happen, terminating the application.
 - Int
 - Float64
 - Float32
+
+## Usage
+
+```go
+func main() {
+    os.Setenv("MY_ENV", "5s") // do this on launching your application
+
+    time.Sleep(env.Duration("MY_ENV", time.Second)) // this will sleep for 5 seconds
+}
+```
