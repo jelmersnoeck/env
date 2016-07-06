@@ -1,4 +1,4 @@
-package notifier_test
+package panic_test
 
 import (
 	"testing"
@@ -8,7 +8,7 @@ import (
 )
 
 func TestPanic_Notify(t *testing.T) {
-	not := notifier.NewPanic()
+	not := panic.NewNotifier()
 
 	assert.Panics(t, func() { not.Notify("mymessage") })
 }

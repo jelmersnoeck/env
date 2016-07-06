@@ -1,4 +1,4 @@
-package notifier
+package panic
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 
 type panicNotifier struct{}
 
-func NewPanic() env.Notifier {
+func NewNotifier() env.Notifier {
 	return &panicNotifier{}
 }
 
