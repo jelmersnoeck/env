@@ -3,8 +3,9 @@
 [![Build Status](https://travis-ci.org/jelmersnoeck/env.svg?branch=master)](https://travis-ci.org/jelmersnoeck/env)
 [![GoDoc](https://godoc.org/github.com/jelmersnoeck/env?status.svg)](https://godoc.org/github.com/jelmersnoeck/env)
 
-Env allows you to get environment variables and fallback to defaults if the
-environment variable is not set or not valid.
+Env makes it easy to get your environment variables in the correct typed format.
+It also introduces a fallback system in case the environmen variable is not set
+or is not valid for the requested type.
 
 ## Notifiers
 
@@ -20,14 +21,7 @@ notifications happen, terminating the application.
 
 ## Supported methods
 
-- String
-- Bool
-- Duration
-- Int64
-- Int32
-- Int
-- Float64
-- Float32
+Have a look at the available methods in the [documentation](https://godoc.org/github.com/jelmersnoeck/env)
 
 ## Usage
 
